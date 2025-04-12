@@ -1,0 +1,31 @@
+name: Python Application
+
+on:
+  push:
+    branches:
+      - main  # or 'master' if that's the name of your main branch
+  pull_request:
+    branches:
+      - main  # or 'master'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # This specifies the environment in which the code will run
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2  # This checks out your repository so that the code is available
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'  # You can specify any Python version (3.x means any latest version)
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt  # Install the dependencies listed in your requirements.txt file
+
+      - name: Run Python script
+        run: |
+          python your_script_name.py  # Replace with the actual Python script name (e.g., Lab5.py)
