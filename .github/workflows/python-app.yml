@@ -3,24 +3,24 @@ name: Python Application
 on:
   push:
     branches:
-      - main  # or 'master' if that's the name of your main branch
+      - main
   pull_request:
     branches:
-      - main  # or 'master'
+      - main
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # This specifies the environment in which the code will run
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2  # This checks out your repository so that the code is available
+        uses: actions/checkout@v2
 
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.x'  # You can specify any Python version (3.x means any latest version)
+          python-version: '3.x'
 
       - name: Run Python script
         run: |
-          python your_script_name.py  # Replace with the actual Python script name (e.g., Lab5.py)
+          python lab5.py
