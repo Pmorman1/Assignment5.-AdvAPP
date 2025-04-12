@@ -23,4 +23,4 @@ jobs:
 
       - name: Run Python script
         run: |
-          python lab5.py
+          python Lab5.py
